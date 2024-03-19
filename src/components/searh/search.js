@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
 import { debounce } from '../../utils';
 import styles from './search.module.css';
+import { useTodosContext } from '../../AppContext';
 
-export const Search = ({ onSearch }) => {
+export const Search = () => {
+	const { onSearch } = useTodosContext();
 	const [value, setValue] = useState('');
 
 	const debouncedOnSearch = useRef(debounce(onSearch, 1500)).current;

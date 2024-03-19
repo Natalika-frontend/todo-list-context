@@ -2,18 +2,20 @@ import styles from './footer.module.css';
 import { Button } from '../button/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { useTodosContext } from '../../AppContext';
 
-export const Footer = ({
-						   taskText,
-						   setTaskText,
-						   setError,
-						   handleAddButtonClick,
-						   isEditing,
-						   isCreating,
-						   toggleSearch,
-						   isSorting,
-						   onChangeSorting,
-					   }) => {
+export const Footer = () => {
+	const {
+		taskText,
+		setTaskText,
+		setError,
+		handleAddButtonClick,
+		isEditing,
+		isCreating,
+		toggleSearch,
+		isSorting,
+		onChangeSorting,
+	} = useTodosContext();
 
 	return (
 		<div className={styles.footer}>
